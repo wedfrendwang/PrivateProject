@@ -26,6 +26,8 @@ import android.widget.Toast;
 
 import wedfrend.wang.privateproject.base.BaseAppCompatActivity;
 import wedfrend.wang.privateproject.landorport.LandOrPortActivity;
+import wedfrend.wang.privateproject.recycle.FragmentActivity;
+import wedfrend.wang.privateproject.recycle.RecycleViewActivity;
 import wedfrend.wang.privateproject.sendobject.ParcelableActivity;
 import wedfrend.wang.privateproject.sendobject.PersonInfo;
 import wedfrend.wang.privateproject.sendobject.PersonMessage;
@@ -148,6 +150,24 @@ public class MainActivity extends BaseAppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent  intent = new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.btn_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent = new Intent(MainActivity.this,FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.btn_RecycleView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent = new Intent(MainActivity.this,RecycleViewActivity.class);
                 startActivity(intent);
             }
         });

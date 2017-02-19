@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -47,14 +50,20 @@
             android:name=".sendobject.SerializableActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_serializable"
-            android:theme="@style/FullscreenTheme"
-            />
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".sendobject.ParcelableActivity"
             android:label="@string/title_activity_parcelable" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".FourActivity"></activity>
+        <activity android:name=".FourActivity" />
+        <activity
+            android:name=".uiview.UiActivity"
+            android:label="@string/title_activity_ui"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".recycle.RecycleViewActivity" />
+        <activity android:name=".recycle.FragmentActivity" />
+        <activity android:name=".recycle.NewsContentActivity"></activity>
     </application>
 
 </manifest>
