@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_solite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="wedfrend.wang.privateproject.savedata.MySOLiteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/createDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="创建数据库"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/addDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="增加数据"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/deleteDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="删除数据"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/updateDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="修改数据"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/selectDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="查询数据"
+            android:textColor="@android:color/white" />
+
+        <!--下面的部分是使用LitePal的方式创建数据库，表格以及一些列的操作-->
+
+        <Button
+            android:id="@+id/LitePalCreateDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="LitePal创建数据库"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/LitePalAddDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="LitePal添加数据"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/LitePalUpdateDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="LitePal更新数据"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/LitePalDeleteDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="LitePal删除数据"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/LitePalSelectDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="LitePal查询数据"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

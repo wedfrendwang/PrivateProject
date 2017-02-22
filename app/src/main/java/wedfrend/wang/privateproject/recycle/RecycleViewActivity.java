@@ -51,6 +51,7 @@ public class RecycleViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
+
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {

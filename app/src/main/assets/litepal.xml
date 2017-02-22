@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<litepal>
+
+    <!--数据库的名称-->
+    <dbname value="LitePalDatabase"></dbname>
+
+    <!--数据库的版本-->
+    <version value="1"></version>
+
+    <!--用于指定所有的映射模型-->
+    <list>
+        <mapping class="wedfrend.wang.privateproject.table.Book"></mapping>
+
+    </list>
+
+</litepal>

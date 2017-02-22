@@ -95,6 +95,79 @@
                 android:text="RecycleView的实例"
                 android:textColor="@android:color/white" />
 
+            <!--SharedPreferences存储-->
+            <Button
+                android:id="@+id/SharedPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="SharedPreferences实例"
+                android:textColor="@android:color/white" />
+
+
+            <!--文件存储实例-->
+            <Button
+                android:id="@+id/files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="Files存储实例"
+                android:textColor="@android:color/white" />
+
+            <!--数据库实例-->
+            <Button
+                android:id="@+id/mySQLiteDatabase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="mySQLiteDatabase数据库实例"
+                android:textColor="@android:color/white" />
+
+
+
+
+            <Button
+                android:id="@+id/btn_BroadCastReceiver_Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="动态注册BroadCastReceiver并监听系统网络变化"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_MyBroadCastReceiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="启动MyBroadCastReceiver"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_LocalBroadCastReceiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="启动LocalBroadCastReceiver"
+                android:textColor="@android:color/white" />
+
+            <!--运行时权限处理-->
+
+
+            <Button
+                android:id="@+id/btn_usePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="5dp"
+                android:text="拨打电话10086"
+                android:textColor="@android:color/white" />
+
 
             <Button
                 android:id="@+id/btn_fragment"
@@ -104,6 +177,12 @@
                 android:layout_margin="5dp"
                 android:text="Fragment声明周期"
                 android:textColor="@android:color/white" />
+
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
         </LinearLayout>
 

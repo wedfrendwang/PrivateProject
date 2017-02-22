@@ -1,33 +1,40 @@
 package wedfrend.wang.privateproject;
 
+import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import wedfrend.wang.privateproject.base.BaseAppCompatActivity;
+import wedfrend.wang.privateproject.broadcast.BroadCastActivity;
+import wedfrend.wang.privateproject.broadcast.LocalBroadCastActivity;
 import wedfrend.wang.privateproject.landorport.LandOrPortActivity;
 import wedfrend.wang.privateproject.recycle.FragmentActivity;
 import wedfrend.wang.privateproject.recycle.RecycleViewActivity;
+import wedfrend.wang.privateproject.savedata.FilesActivity;
+import wedfrend.wang.privateproject.savedata.MySOLiteActivity;
+import wedfrend.wang.privateproject.savedata.SharedPreferencesActivity;
 import wedfrend.wang.privateproject.sendobject.ParcelableActivity;
 import wedfrend.wang.privateproject.sendobject.PersonInfo;
 import wedfrend.wang.privateproject.sendobject.PersonMessage;
@@ -37,6 +44,7 @@ public class MainActivity extends BaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,7 +179,100 @@ public class MainActivity extends BaseAppCompatActivity
                 startActivity(intent);
             }
         });
+        findViewById(R.id.SharedPreferences).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SharedPreferencesActivity.class);
+                startActivity(intent);
+            }
+        });
 
+
+        findViewById(R.id.files).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FilesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.mySQLiteDatabase).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MySOLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.btn_BroadCastReceiver_Code).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  intent = new Intent(MainActivity.this,BroadCastActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        findViewById(R.id.btn_MyBroadCastReceiver).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("wedfrend.wang.privateproject.MYBROADCASTRECEIVER");
+//                sendBroadcast(intent);
+                sendOrderedBroadcast(intent,null);
+            }
+
+        });
+
+        findViewById(R.id.btn_MyBroadCastReceiver).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LocalBroadCastActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        findViewById(R.id.btn_usePhone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
+
+                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE},0);
+
+                }else{
+                    call();
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case 0:
+
+                Log.i(TAG, "onRequestPermissionsResult: "+permissions[0]);
+                Log.i(TAG, "onRequestPermissionsResult: "+grantResults[0]);
+                if(grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    call();
+                }else{
+                    Toast.makeText(MainActivity.this,"您已经拒绝的权限请求",Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+        }
+    }
+
+    private void call(){
+        try {
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(Uri.parse("tel:10086"));
+            startActivity(intent);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
