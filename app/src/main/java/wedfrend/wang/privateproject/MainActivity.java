@@ -29,6 +29,7 @@ import android.widget.Toast;
 import wedfrend.wang.privateproject.base.BaseAppCompatActivity;
 import wedfrend.wang.privateproject.broadcast.BroadCastActivity;
 import wedfrend.wang.privateproject.broadcast.LocalBroadCastActivity;
+import wedfrend.wang.privateproject.contentprovider.ContentProviderActivity;
 import wedfrend.wang.privateproject.landorport.LandOrPortActivity;
 import wedfrend.wang.privateproject.recycle.FragmentActivity;
 import wedfrend.wang.privateproject.recycle.RecycleViewActivity;
@@ -243,6 +244,13 @@ public class MainActivity extends BaseAppCompatActivity
                 }else{
                     call();
                 }
+            }
+        });
+
+        findViewById(R.id.btn_useContacts).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ContentProviderActivity.class));
             }
         });
     }

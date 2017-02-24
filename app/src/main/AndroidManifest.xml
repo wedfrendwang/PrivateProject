@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="wedfrend.wang.privateproject.base.MyApplication"
+        android:name=".base.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -85,7 +85,15 @@
         <activity android:name=".broadcast.LocalBroadCastActivity" />
         <activity android:name=".savedata.SharedPreferencesActivity" />
         <activity android:name=".savedata.FilesActivity" />
-        <activity android:name=".savedata.MySOLiteActivity"></activity>
+        <activity android:name=".savedata.MySOLiteActivity" />
+        <activity android:name=".contentprovider.ContentProviderActivity"></activity>
+        
+        
+        <provider
+            android:authorities="wedfrend.wang.privateproject.provider"
+            android:name="wedfrend.wang.privateproject.contentprovider.MyContentProvider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>

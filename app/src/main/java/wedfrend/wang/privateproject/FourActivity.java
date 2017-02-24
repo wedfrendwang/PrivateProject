@@ -25,11 +25,13 @@ public class FourActivity extends BaseAppCompatActivity {
             }
         });
 
+
         findViewById(R.id.btn_removeAssign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tv_show.setText(ActivityCollector.newInstance().removeAssignActivity(SecondActivity.class));
             }
         });
+
     }
 }
