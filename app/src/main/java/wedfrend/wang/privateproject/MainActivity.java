@@ -1,18 +1,15 @@
 package wedfrend.wang.privateproject;
 
-import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,15 +20,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
+import wedfrend.wang.privateproject.alarm.AlarmActivity;
 import wedfrend.wang.privateproject.base.BaseAppCompatActivity;
 import wedfrend.wang.privateproject.broadcast.BroadCastActivity;
 import wedfrend.wang.privateproject.broadcast.LocalBroadCastActivity;
 import wedfrend.wang.privateproject.contentprovider.ContentProviderActivity;
+import wedfrend.wang.privateproject.fragment.FragmentActivity;
 import wedfrend.wang.privateproject.landorport.LandOrPortActivity;
-import wedfrend.wang.privateproject.recycle.FragmentActivity;
+import wedfrend.wang.privateproject.notification.NotificationActivity;
 import wedfrend.wang.privateproject.recycle.RecycleViewActivity;
 import wedfrend.wang.privateproject.savedata.FilesActivity;
 import wedfrend.wang.privateproject.savedata.MySOLiteActivity;
@@ -251,6 +249,20 @@ public class MainActivity extends BaseAppCompatActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ContentProviderActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_Alarm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,AlarmActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_Notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
             }
         });
     }

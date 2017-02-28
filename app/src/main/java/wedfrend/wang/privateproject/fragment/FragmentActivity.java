@@ -1,17 +1,16 @@
-package wedfrend.wang.privateproject.recycle;
+package wedfrend.wang.privateproject.fragment;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
 import wedfrend.wang.privateproject.R;
-import wedfrend.wang.privateproject.fragment.FirstFragment;
-import wedfrend.wang.privateproject.fragment.SecondFragment;
 
 /**
  * Fragment的实践,另外一种控件的点击方法,使用隐藏和显示的方法
@@ -23,26 +22,67 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
 
     Fragment firstFragment,secondFragment;
 
+    private static final String TAG = "FragmentActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment);
-        //实例化控件
-        frame_fragment = ((FrameLayout) findViewById(R.id.frame_fragment));
-        btn_firstFragment = ((Button) findViewById(R.id.btn_firstFragment));
-        btn_secondFragment = ((Button) findViewById(R.id.btn_secondFragment));
-        btn_firstFragment.setOnClickListener(this);
-        btn_secondFragment.setOnClickListener(this);
+        Log.i(TAG, "onCreate: ");
+        setContentView(R.layout.activity_recycle_view);
+//        实例化控件
+//        frame_fragment = ((FrameLayout) findViewById(R.id.frame_fragment));
+//        btn_firstFragment = ((Button) findViewById(R.id.btn_firstFragment));
+//        btn_secondFragment = ((Button) findViewById(R.id.btn_secondFragment));
+//        btn_firstFragment.setOnClickListener(this);
+//        btn_secondFragment.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart: ");
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart: ");
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_firstFragment:
-                setFragment(0);
+//                setFragment(0);
+                replaceFragment(new FirstFragment());
                 break;
             case R.id.btn_secondFragment:
-                setFragment(1);
+//                setFragment(1);
+                replaceFragment(new SecondFragment());
                 break;
         }
     }
@@ -77,6 +117,7 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
                 }
                 break;
         }
+//        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
@@ -109,6 +150,7 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_fragment,fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

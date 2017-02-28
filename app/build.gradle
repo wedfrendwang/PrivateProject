@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias ALIAS_NAME
+            keyPassword KEY_PASS
+            storeFile file(KEY_PATH)
+            storePassword ALIAS_PASS
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -15,6 +23,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -29,7 +41,6 @@ dependencies {
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:percent:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.google.android.gms:play-services:10.0.1'
     compile 'org.litepal.android:core:1.4.1'
     testCompile 'junit:junit:4.12'
 }

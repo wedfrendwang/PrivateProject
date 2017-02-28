@@ -14,6 +14,8 @@
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".base.MyApplication"
         android:allowBackup="true"
@@ -61,7 +63,6 @@
         <activity android:name=".ThirdActivity" />
         <activity android:name=".FourActivity" />
         <activity android:name=".recycle.RecycleViewActivity" />
-        <activity android:name=".recycle.FragmentActivity" />
         <activity android:name=".recycle.NewsContentActivity" />
         <activity android:name=".broadcast.BroadCastActivity" />
 
@@ -86,14 +87,23 @@
         <activity android:name=".savedata.SharedPreferencesActivity" />
         <activity android:name=".savedata.FilesActivity" />
         <activity android:name=".savedata.MySOLiteActivity" />
-        <activity android:name=".contentprovider.ContentProviderActivity"></activity>
-        
-        
+        <activity android:name=".contentprovider.ContentProviderActivity" />
+        <activity android:name=".fragment.FragmentActivity" />
+
         <provider
+            android:name=".contentprovider.MyContentProvider"
             android:authorities="wedfrend.wang.privateproject.provider"
-            android:name="wedfrend.wang.privateproject.contentprovider.MyContentProvider"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true" />
+
+        <activity android:name=".alarm.AlarmActivity" />
+
+        <service
+            android:name=".alarm.AlarmService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".notification.NotificationActivity"></activity>
     </application>
 
 </manifest>

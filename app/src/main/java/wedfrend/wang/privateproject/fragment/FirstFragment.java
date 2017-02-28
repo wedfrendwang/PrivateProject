@@ -100,4 +100,9 @@ public class FirstFragment extends Fragment {
         Log.i(TAG, "onDetach: ");
     }
 
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 }
