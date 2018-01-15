@@ -25,6 +25,18 @@ public class BaseAppCompatActivity extends AppCompatActivity {
     }
 
 
+    boolean a = true;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(a){
+            return;
+        }
+        Log.e(TAG, "onResume: 执行还是不执行" );
+
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

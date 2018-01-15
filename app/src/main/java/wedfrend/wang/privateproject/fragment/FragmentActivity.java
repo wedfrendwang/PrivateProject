@@ -27,13 +27,13 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate: ");
-        setContentView(R.layout.activity_recycle_view);
+        setContentView(R.layout.activity_fragment);
 //        实例化控件
-//        frame_fragment = ((FrameLayout) findViewById(R.id.frame_fragment));
-//        btn_firstFragment = ((Button) findViewById(R.id.btn_firstFragment));
-//        btn_secondFragment = ((Button) findViewById(R.id.btn_secondFragment));
-//        btn_firstFragment.setOnClickListener(this);
-//        btn_secondFragment.setOnClickListener(this);
+        frame_fragment = ((FrameLayout) findViewById(R.id.frame_fragment));
+        btn_firstFragment = ((Button) findViewById(R.id.btn_firstFragment));
+        btn_secondFragment = ((Button) findViewById(R.id.btn_secondFragment));
+        btn_firstFragment.setOnClickListener(this);
+        btn_secondFragment.setOnClickListener(this);
     }
 
     @Override
@@ -77,12 +77,12 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_firstFragment:
-//                setFragment(0);
-                replaceFragment(new FirstFragment());
+                setFragment(0);
+//                replaceFragment(new FirstFragment());
                 break;
             case R.id.btn_secondFragment:
-//                setFragment(1);
-                replaceFragment(new SecondFragment());
+                setFragment(1);
+//                replaceFragment(new SecondFragment());
                 break;
         }
     }

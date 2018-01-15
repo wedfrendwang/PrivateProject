@@ -38,6 +38,17 @@ public class FirstFragment extends Fragment {
     }
 
 
+    /**
+     * 这个方法有意思了
+     * @param hidden
+     */
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +61,7 @@ public class FirstFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.i(TAG, "onActivityCreated: ");
+        Log.i(TAG, "onActivityCreated: "+isHidden());
     }
 
     @Override
@@ -63,7 +74,7 @@ public class FirstFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, "onResume: ");
+        Log.i(TAG, "onResume: "+isHidden());
     }
 
 

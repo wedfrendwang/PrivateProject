@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".viewpager.ViewPagerClass"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -104,6 +104,8 @@
             android:exported="true" />
 
         <activity android:name=".notification.NotificationActivity"></activity>
+
+
     </application>
 
 </manifest>

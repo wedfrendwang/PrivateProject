@@ -268,6 +268,14 @@ public class MainActivity extends BaseAppCompatActivity
     }
 
     @Override
+    protected void onResume() {
+
+        super.onResume();
+        Log.i(TAG, "onResume: 我偏偏要执行呢？");
+        
+    }
+
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode){
